@@ -7,6 +7,16 @@ fileignoreconfig:
   checksum: 95494b42c07a0c46a329d365209d7a882499a2cd8894fa0f55ad2bd9472c1c05
 - filename: .harness/simple-java-maven-app.yaml
   checksum: 18570bd01cd27e81f8fba9b545f325d54f5df73c9490c1c0a4240259d580bb70
+- filename: infra/connector/main.tf
+  checksum: 8ed0ed1a21064ddd1b630a18bb73cfa6bb5ab9de9b00ba4eead44d4fe6b98cdc
+- filename: infra/pipeline/main.tf
+  checksum: 73e57df98ec9b819a5e99d8aae34f27bfacb8a61d9c5949128570efbecda51c5
+- filename: infra/project/.terraform.lock.hcl
+  checksum: 054c023c6e49000cc4ba45c7551198c081164dc958b568467cfe6aba2171696c
+- filename: infra/project/main.tf
+  checksum: ad7b5c645e68d52ba7cd52bd29cbc36d3a04908c14fde64c58594d5a4207e026
+- filename: infra/secret/main.tf
+  checksum: b13a88f0dea288c0c6d2c1665102d8a3a7745df062919bba3eb1e49c0eadb34c
 - filename: setup.sh
   checksum: 6989313f304aaaafe01d9fd9e2e2f176ce54e7236e4086457dad7ba082eeff41
 version: "1.0"
