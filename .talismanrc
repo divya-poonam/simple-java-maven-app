@@ -1,6 +1,12 @@
 fileignoreconfig:
 - filename: .gitignore
   checksum: f7b5a33e0bcf10ab6fb32421ec569297003345bbc3e44c594408bbcd44bb2c17
+- filename: .harness/import-test/.terraform.lock.hcl
+  checksum: 0c65394db0be00b47d360c860f93df056c03c4c1e182f1709e48685dde1c1266
+- filename: .harness/import-test/main.tf
+  checksum: 95494b42c07a0c46a329d365209d7a882499a2cd8894fa0f55ad2bd9472c1c05
 - filename: .harness/simple-java-maven-app.yaml
   checksum: 18570bd01cd27e81f8fba9b545f325d54f5df73c9490c1c0a4240259d580bb70
+- filename: setup.sh
+  checksum: 6989313f304aaaafe01d9fd9e2e2f176ce54e7236e4086457dad7ba082eeff41
 version: "1.0"
