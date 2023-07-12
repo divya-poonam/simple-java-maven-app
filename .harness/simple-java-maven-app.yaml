@@ -11,14 +11,14 @@ pipeline:
         repoName: simple-java-maven-app
   stages:
     - stage:
-        identifier: build
-        name: build
+        identifier: Build
+        name: Build
         spec:
           cloneCodebase: true
           execution:
             steps:
               - step:
-                  identifier: echo
+                  identifier: Build
                   name: Build
                   spec:
                     shell: Sh
@@ -27,8 +27,8 @@ pipeline:
                   type: Run
               - step:
                   type: RunTests
-                  name: Unit test
-                  identifier: Unit_test
+                  name: UnitTest
+                  identifier: UnitTest
                   spec:
                     language: Java
                     buildTool: Maven
@@ -41,8 +41,8 @@ pipeline:
                           - target/surefire-reports/*.xml
               - step:
                   type: Run
-                  name: Push artifacts
-                  identifier: Push_artifacts
+                  name: PushArtifacts
+                  identifier: PushArtifacts
                   spec:
                     connectorRef: account.harnessImage
                     image: amazon/aws-cli
