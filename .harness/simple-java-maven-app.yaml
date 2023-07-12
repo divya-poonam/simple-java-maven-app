@@ -1,0 +1,61 @@
+pipeline:
+  identifier: simple_java_maven_app
+  name: simple-java-maven-app
+  orgIdentifier: default
+  projectIdentifier: harnessdemo
+  properties:
+    ci:
+      codebase:
+        build: <+input>
+        connectorRef: org.divyapoonamorganisationconnector
+        repoName: simple-java-maven-app
+  stages:
+    - stage:
+        identifier: build
+        name: build
+        spec:
+          cloneCodebase: true
+          execution:
+            steps:
+              - step:
+                  identifier: echo
+                  name: Build
+                  spec:
+                    shell: Sh
+                    command: mvn -B -DskipTests clean package
+                  timeout: ""
+                  type: Run
+              - step:
+                  type: RunTests
+                  name: Unit test
+                  identifier: Unit_test
+                  spec:
+                    language: Java
+                    buildTool: Maven
+                    args: test
+                    runOnlySelectedTests: true
+                    reports:
+                      type: JUnit
+                      spec:
+                        paths:
+                          - target/surefire-reports/*.xml
+              - step:
+                  type: Run
+                  name: Push artifacts
+                  identifier: Push_artifacts
+                  spec:
+                    connectorRef: account.harnessImage
+                    image: amazon/aws-cli
+                    shell: Sh
+                    command: aws s3 cp /harness/target/my-app-1.0-SNAPSHOT.jar s3://harness-artifact-store
+                    envVariables:
+                      AWS_ACCESS_KEY_ID: ""
+                      AWS_SECRET_ACCESS_KEY: ""
+                      AWS_SESSION_TOKEN: ""
+          platform:
+            arch: Amd64
+            os: Linux
+          runtime:
+            spec: {}
+            type: Cloud
+        type: CI
