@@ -84,11 +84,6 @@ resource "harness_platform_pipeline" "demo_pipeline" {
   project_id       = harness_platform_project.harnessdemo.identifier
   template_applied = false
   yaml             = file("../simple-java-maven-app.yaml")
-  git_details {
-    branch_name = "master"
-    file_path   = ".harness/simple-java-maven-app.yaml"
-    repo_name   = "simple-java-maven-app"
-  }
 }
 
 terraform {
