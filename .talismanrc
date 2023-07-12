@@ -1,4 +1,6 @@
 fileignoreconfig:
+- filename: .gitignore
+  checksum: f7b5a33e0bcf10ab6fb32421ec569297003345bbc3e44c594408bbcd44bb2c17
 - filename: .harness/simple-java-maven-app.yaml
-  checksum: 88fab56cdad14c780a97a06c349435f33e5710a423a514be5c901e347e8f3367
+  checksum: 18570bd01cd27e81f8fba9b545f325d54f5df73c9490c1c0a4240259d580bb70
 version: "1.0"

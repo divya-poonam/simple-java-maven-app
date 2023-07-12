@@ -49,9 +49,9 @@ pipeline:
                     shell: Sh
                     command: aws s3 cp /harness/target/my-app-1.0-SNAPSHOT.jar s3://harness-artifact-store
                     envVariables:
-                      AWS_ACCESS_KEY_ID: <+secrets.getValue("AWS_ACCESS_KEY_ID")>
-                      AWS_SECRET_ACCESS_KEY: <+secrets.getValue("AWS_SECRET_ACCESS_KEY")>
-                      AWS_SESSION_TOKEN: <+secrets.getValue("AWS_SESSION_TOKEN")>
+                      AWS_ACCESS_KEY_ID: <+secrets.getValue("aws_access_key_id")>
+                      AWS_SECRET_ACCESS_KEY: <+secrets.getValue("aws_secret_access_key")>
+                      AWS_SESSION_TOKEN: <+secrets.getValue("aws_session_token")>
           platform:
             arch: Amd64
             os: Linux
