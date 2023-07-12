@@ -1,4 +1,4 @@
 fileignoreconfig:
 - filename: .harness/simple-java-maven-app.yaml
-  checksum: e050af1d631b2a13b1f247531d3940f2e95b155860b0db08bc517e30fe437687
+  checksum: 88fab56cdad14c780a97a06c349435f33e5710a423a514be5c901e347e8f3367
 version: "1.0"
