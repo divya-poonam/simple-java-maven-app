@@ -1,5 +1,5 @@
 pipeline:
-  identifier: simple_java_maven_app
+  identifier: simplejavamavenapp
   name: simple-java-maven-app
   orgIdentifier: default
   projectIdentifier: harnessdemo
