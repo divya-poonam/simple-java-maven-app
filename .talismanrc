@@ -9,6 +9,8 @@ fileignoreconfig:
   checksum: d3de5cddc28105b7c6aa2954f86ffb933839f5499075b122f68f3a2b4e416dfa
 - filename: infra/connector/main.tf
   checksum: 8ed0ed1a21064ddd1b630a18bb73cfa6bb5ab9de9b00ba4eead44d4fe6b98cdc
+- filename: infra/pipeline/.terraform.lock.hcl
+  checksum: c982279588021b93f04af7fba915fd7888062258886281c4156f8225af4e0341
 - filename: infra/pipeline/main.tf
   checksum: 73e57df98ec9b819a5e99d8aae34f27bfacb8a61d9c5949128570efbecda51c5
 - filename: infra/project/.terraform.lock.hcl

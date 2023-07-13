@@ -4,7 +4,7 @@ resource "harness_platform_pipeline" "demo_pipeline" {
   org_id           = "default"
   project_id       = "harnessdemo"
   template_applied = false
-  yaml             = file("../simple-java-maven-app.yaml")
+  yaml             = file("../../.harness/simple-java-maven-app.yaml")
 }
 
 terraform {
