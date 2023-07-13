@@ -17,6 +17,10 @@ fileignoreconfig:
   checksum: 054c023c6e49000cc4ba45c7551198c081164dc958b568467cfe6aba2171696c
 - filename: infra/project/main.tf
   checksum: ad7b5c645e68d52ba7cd52bd29cbc36d3a04908c14fde64c58594d5a4207e026
+- filename: infra/s3/.terraform.lock.hcl
+  checksum: d22688656ceb67c91e302fa91a7b28e4f844e1eab9fb19def4bce58e23e5931e
+- filename: infra/s3/providers.tf
+  checksum: 5c609a0681cbdc881686601aa8b3ccf8272b59e9bb5d067a1169723dce49bfbb
 - filename: infra/secret/main.tf
   checksum: b13a88f0dea288c0c6d2c1665102d8a3a7745df062919bba3eb1e49c0eadb34c
 - filename: setup.sh
