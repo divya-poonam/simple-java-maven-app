@@ -6,7 +6,7 @@ fileignoreconfig:
 - filename: .harness/import-test/main.tf
   checksum: 95494b42c07a0c46a329d365209d7a882499a2cd8894fa0f55ad2bd9472c1c05
 - filename: .harness/simple-java-maven-app.yaml
-  checksum: 18570bd01cd27e81f8fba9b545f325d54f5df73c9490c1c0a4240259d580bb70
+  checksum: d3de5cddc28105b7c6aa2954f86ffb933839f5499075b122f68f3a2b4e416dfa
 - filename: infra/connector/main.tf
   checksum: 8ed0ed1a21064ddd1b630a18bb73cfa6bb5ab9de9b00ba4eead44d4fe6b98cdc
 - filename: infra/pipeline/main.tf

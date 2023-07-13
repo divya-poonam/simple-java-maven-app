@@ -12,7 +12,6 @@ resource "harness_platform_secret_text" "aws_access_key_id" {
   name                      = "aws_access_key_id"
   description               = "short lived aws access key id for accessing aws beach"
   org_id                    = "default"
-  project_id                = "harnessdemo"
   secret_manager_identifier = "harnessSecretManager"
   value_type                = "Inline"
   value                     = var.AWS_ACCESS_KEY_ID
@@ -24,7 +23,6 @@ resource "harness_platform_secret_text" "aws_secret_access_key" {
   name                      = "aws_secret_access_key"
   description               = "short lived aws secret access key for accessing aws beach"
   org_id                    = "default"
-  project_id                = "harnessdemo"
   secret_manager_identifier = "harnessSecretManager"
   value_type                = "Inline"
   value                     = var.AWS_SECRET_ACCESS_KEY
@@ -36,7 +34,6 @@ resource "harness_platform_secret_text" "aws_session_token" {
   name                      = "aws_session_token"
   description               = "short lived aws session token for accessing aws beach"
   org_id                    = "default"
-  project_id                = "harnessdemo"
   secret_manager_identifier = "harnessSecretManager"
   value_type                = "Inline"
   value                     = var.AWS_SESSION_TOKEN
@@ -48,7 +45,6 @@ resource "harness_platform_secret_text" "github_pat_token" {
   name                      = "github_pat_token"
   description               = "pat token to give read only access for all repositories in punam-shelke account for cloning"
   org_id                    = "default"
-  project_id                = "harnessdemo"
   secret_manager_identifier = "harnessSecretManager"
   value_type                = "Inline"
   value                     = var.GITHUB_PAT_TOKEN
@@ -56,25 +52,23 @@ resource "harness_platform_secret_text" "github_pat_token" {
 }
 
 resource "harness_platform_connector_github" "test" {
-  identifier  = "identifier"
-  name        = "name"
-  description = "test"
-  url                = "https://github.com/divya-poonam/"
-  connection_type    = "Account"
-  validation_repo    = "simple-java-maven-app"
-  execute_on_delegate=false
-  org_id           = "default"
-  project_id       = "harnessdemo"
+  identifier          = "identifier"
+  name                = "name"
+  description         = "test"
+  url                 = "https://github.com/divya-poonam/"
+  connection_type     = "Account"
+  validation_repo     = "simple-java-maven-app"
+  execute_on_delegate = false
+  org_id              = "default"
   credentials {
     http {
       username  = "punam-shelke"
-      token_ref = harness_platform_secret_text.github_pat_token.id
+      token_ref = join(".", ["org", harness_platform_secret_text.github_pat_token.id])
     }
   }
   api_authentication {
-    token_ref = harness_platform_secret_text.github_pat_token.id
+    token_ref = join(".", ["org", harness_platform_secret_text.github_pat_token.id])
   }
-
 }
 
 resource "harness_platform_pipeline" "demo_pipeline" {
