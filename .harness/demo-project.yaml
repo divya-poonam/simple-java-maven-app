@@ -1,0 +1,47 @@
+pipeline:
+  identifier: demo_project
+  name: demo_project
+  orgIdentifier: default
+  projectIdentifier: harness_bootstrap
+  properties:
+    ci:
+      codebase:
+        build: <+input>
+        connectorRef: org.identifier
+        repoName: simple-java-maven-app
+  stages:
+    - stage:
+        identifier: HarnessProject
+        name: HarnessProject
+        spec:
+          cloneCodebase: true
+          execution:
+            steps:
+              - step:
+                  identifier: echo
+                  name: create project
+                  spec:
+                    connectorRef: account.harnessImage
+                    image: hashicorp/terraform
+                    shell: Sh
+                    command: |-
+                      cd infra/project
+                      terraform init
+                      terraform apply --auto-approve
+                    envVariables:
+                      AWS_ACCESS_KEY_ID: <+secrets.getValue("org.aws_access_key_id")>
+                      AWS_SECRET_ACCESS_KEY: <+secrets.getValue("org.aws_secret_access_key")>
+                      AWS_SESSION_TOKEN: <+secrets.getValue("org.aws_session_token")>
+                      TF_VAR_HARNESS_ACCOUNT_ID: <+secrets.getValue("org.harness_account_id")>
+                      TF_VAR_HARNESS_PLATFORM_API_KEY: <+secrets.getValue("org.harness_platform_api_key")>
+                  timeout: ""
+                  type: Run
+          platform:
+            arch: Amd64
+            os: Linux
+          runtime:
+            spec: {}
+            type: Cloud
+        type: CI
+  tags: {}
+  variables: []

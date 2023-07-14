@@ -1,12 +1,26 @@
 fileignoreconfig:
 - filename: .gitignore
   checksum: f7b5a33e0bcf10ab6fb32421ec569297003345bbc3e44c594408bbcd44bb2c17
+- filename: .harness/demo-pipeline.yaml
+  checksum: 05ac4ebb2300002f97429e0396ace6eae1c919dd9a80f3f3b1a86859d80e47ab
+- filename: .harness/demo-project.yaml
+  checksum: c0180678feb0b5cc87f0ecbd48b8c4352401256656bfafe6f4f70a79ee57d65f
 - filename: .harness/import-test/.terraform.lock.hcl
   checksum: 0c65394db0be00b47d360c860f93df056c03c4c1e182f1709e48685dde1c1266
 - filename: .harness/import-test/main.tf
   checksum: 95494b42c07a0c46a329d365209d7a882499a2cd8894fa0f55ad2bd9472c1c05
+- filename: .harness/infra-pipeline.yaml
+  checksum: 89fce298a5c64ebb90c7de31725568353387a81ea2c244638a4dbc10c64ee398
 - filename: .harness/simple-java-maven-app.yaml
   checksum: d3de5cddc28105b7c6aa2954f86ffb933839f5499075b122f68f3a2b4e416dfa
+- filename: infra/bootstrap/.terraform.lock.hcl
+  checksum: 8355ee8909c9754fcdf4e4d85f9bb4e3f8817d6b33f7b86d44560a52228cff4e
+- filename: infra/bootstrap/main.tf
+  checksum: 01b0dc8041affa712c99bb5051c8228879fe0f25c8dbe82a1fcd3b161a6cd36b
+- filename: infra/bootstrap/providers.tf
+  checksum: bc9f51c435570eb3c7a4d0abc9c95e8ca22a4594b2ae41bc90eaffd9bf4db8dc
+- filename: infra/bootstrap/secret/main.tf
+  checksum: 57f6a8d45769400c3f7eb9b31a295ad609d309b38f9f3881952f5ff5cbf673db
 - filename: infra/connector/main.tf
   checksum: 8ed0ed1a21064ddd1b630a18bb73cfa6bb5ab9de9b00ba4eead44d4fe6b98cdc
 - filename: infra/pipeline/.terraform.lock.hcl
